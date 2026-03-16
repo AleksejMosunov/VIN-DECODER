@@ -2,22 +2,36 @@ import { Form } from 'react-router-dom';
 import { useVinStore } from '../../store/useVinStore';
 import { VinApi } from '../../api/vinApi';
 import './styles.css';
+import { useState } from 'react';
 
 export default function Home() {
-  const { lastVinResults, addVinResult, vinResults } = useVinStore();
+  const { lastVinResults, addVinResult, vinResults, apiError, setApiError } = useVinStore();
+  const [formError, setFormError] = useState('');
+  const [apiMessage, setApiMessage] = useState('');
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setFormError('');
+    setApiMessage('');
+    setApiError('');
     const formData = new FormData(e.currentTarget);
     const vin = formData.get('vin') as string;
-    if (!vin || vin.length > 17) return alert('Некоректний VIN');
+    if (!vin) {
+      setFormError('Введіть VIN-код');
+      return;
+    }
+    if (vin.length > 17) {
+      setFormError('VIN-код має бути не довше 17 символів');
+      return;
+    }
     VinApi.decodeVin(vin)
       .then(res => {
         addVinResult(res);
+        setApiMessage(res.Message || '');
       })
       .catch(err => {
-        alert('Помилка при декодуванні VIN');
-        console.error(err);
+        setApiError('Помилка при декодуванні VIN');
+        setApiMessage('');
       });
   };
 
@@ -27,6 +41,9 @@ export default function Home() {
         <input type="text" name="vin" placeholder="Введіть VIN" maxLength={17} className="vin-input" />
         <button type="submit" className="vin-btn">Декодувати</button>
       </form>
+      {formError && <div className="vin-error">{formError}</div>}
+      {apiError && <div className="vin-error">{apiError}</div>}
+      {apiMessage && <div className="vin-message">{apiMessage}</div>}
 
       <div className="vin-history">
         <h2>Останні 3 VIN</h2>
@@ -42,7 +59,7 @@ export default function Home() {
       </div>
 
       <div className="vin-results">
-        <h2>Результати розшифровки {lastVinResults[0]?.SearchCriteria?.replace('VIN:', '') || 'VIN'}</h2>
+        <h2>Результати розшифровки</h2>
         {vinResults && vinResults.length > 0 ? (
           <ul>
             {vinResults.filter(r => r.Value).map((r, idx) => (

@@ -24,7 +24,12 @@ function App() {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="loading-container">
+        <div className="spinner"></div>
+        <div className="loading-text">Завантаження...</div>
+      </div>
+    );
   }
 
   return (
