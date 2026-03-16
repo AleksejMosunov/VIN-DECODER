@@ -1,4 +1,4 @@
-/* ...existing code... */
+/* Обычные CSS для Home */
 .home-container {
   max-width: 500px;
   margin: 32px auto;
@@ -34,26 +34,6 @@
 }
 .vin-btn:hover {
   background: #1741a6;
-}
-
-.vin-history, .vin-results {
-  margin-bottom: 24px;
-}
-
-.vin-result-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 4px 0;
-  border-bottom: 1px solid #eee;
-}
-
-.vin-variable {
-  font-weight: 500;
-  color: #222;
-}
-
-.vin-value {
-  color: #555;
 }
 
 .vin-error {
