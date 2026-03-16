@@ -1,0 +1,56 @@
+.home-container {
+  max-width: 500px;
+  margin: 32px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.vin-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.vin-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.vin-btn {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.vin-btn:hover {
+  background: #1741a6;
+}
+
+.vin-history, .vin-results {
+  margin-bottom: 24px;
+}
+
+.vin-result-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.vin-variable {
+  font-weight: 500;
+  color: #222;
+}
+
+.vin-value {
+  color: #555;
+}

@@ -1,0 +1,57 @@
+/* ...existing code... */
+.variables-container {
+  max-width: 700px;
+  margin: 32px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.variables-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.variable-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.variable-link {
+  font-weight: 600;
+  color: #2563eb;
+  text-decoration: none;
+  transition: color 0.2s;
+  min-width: 200px;
+  max-width: 100%;
+  word-break: break-word;
+  display: inline-block;
+}
+.variable-link:hover {
+  color: #1741a6;
+  text-decoration: underline;
+}
+
+.variable-desc {
+  color: #444;
+  font-size: 15px;
+}
+@media (max-width: 600px) {
+  .variables-container {
+    max-width: 100vw;
+    padding: 8px;
+  }
+  .variable-link {
+    min-width: 0;
+    font-size: 14px;
+  }
+  .variable-item {
+    flex-direction: column;
+    gap: 4px;
+  }
+}

@@ -1,16 +1,39 @@
-# React + Vite
+# VIN Decoder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Демо застосунок (розгорнутий)](https://vin-decoder-demo.vercel.app)
 
-Currently, two official plugins are available:
+## Короткий опис функціоналу
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Декодування VIN-коду автомобіля через офіційний API
+- Список трьох останніх розшифрованих VIN-кодів
+- Вивід результатів розшифровки (тільки змінні з заповненим значенням)
+- Справочник змінних з детальним описом
+- Сторінка About з інформацією про застосунок
+- Мінімалістична адаптивна верстка (420–1440px), семантичні теги, без фреймворків
 
-## React Compiler
+## Інструкція по локальному запуску
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Клонуйте репозиторій:
+   ```bash
+   git clone https://github.com/AleksejMosunov/VIN-DECODER.git
+   cd VIN-DECODER
+   ```
+2. Встановіть залежності:
+   ```bash
+   npm install
+   ```
+3. Запустіть застосунок:
+   ```bash
+   npm run dev
+   ```
+4. Відкрийте [http://localhost:5173](http://localhost:5173) у браузері
 
-## Expanding the ESLint configuration
+## Технології
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- Zustand
+- Vite
+
+---
+
+> Для розгорнутого застосунку використовується Vercel. Якщо потрібно — змініть адресу демо у README.
