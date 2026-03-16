@@ -6,8 +6,8 @@ import { useEffect } from 'react';
 import { VinApi } from './api/vinApi';
 import { useVinStore } from './store/useVinStore';
 import About from './pages/About/About';
-import MainLayout from './layouts/mainLayout';
 import './App.css';
+import MainLayout from './layouts/MainLayout';
 
 function App() {
 
