@@ -1,6 +1,6 @@
 # VIN Decoder
 
-[Демо застосунок (розгорнутий)](https://vin-decoder-demo.vercel.app)
+[Демо застосунок (розгорнутий)](https://vin-decoder-pink.vercel.app/)
 
 ## Короткий опис функціоналу
 
